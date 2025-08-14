@@ -1,8 +1,8 @@
 ## Interface: 30300
 ## Title: Heal Prediction Addon
-## Notes: Affiche les prédictions de heal sur les frames d'unité
+## Notes: Affiche les prédictions de heal sur les frames d'unité - Compatible Ascension
 ## Author: Hutshx
-## Version: 1.0
+## Version: 1.1
 ## RequiredDeps: 
 ## OptionalDeps:
 ## SavedVariables:
@@ -11,5 +11,8 @@ Libs\LibStub\LibStub.lua
 Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
 Libs\LibHealComm-4.0\LibHealComm-4.0.lua
 Core\HealPrediction.lua
-Core\UnitFrameHealBars.lua
+Core\Config.lua
+Core\HealComm4.lua
+Core\EnhancedHealBars.lua
+Core\LegacyHealBars.lua
 Templates\HealPredictionTemplates.xml
