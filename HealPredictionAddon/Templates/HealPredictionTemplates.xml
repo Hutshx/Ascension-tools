@@ -1,0 +1,24 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+
+  <!-- Heal Prediction Bar Templates -->
+  <Texture name="MyHealPredictionBarTemplate" virtual="true" file="Interface\TargetingFrame\UI-StatusBar">
+    <Color r="0.0" g="0.827" b="0.765"/>
+  </Texture>
+  
+  <Texture name="OtherHealPredictionBarTemplate" virtual="true" file="Interface\TargetingFrame\UI-StatusBar">
+    <Color r="0.0" g="0.631" b="0.557"/>
+  </Texture>
+
+  <!-- Main Heal Prediction Template -->
+  <Frame name="HealPredictionTemplate" frameLevel="1" setAllPoints="true" virtual="true">
+    <Layers>
+      <Layer level="BORDER">
+        <Texture name="$parentFrameMyHealPredictionBar" inherits="MyHealPredictionBarTemplate"/>
+        <Texture name="$parentFrameOtherHealPredictionBar" inherits="OtherHealPredictionBarTemplate"/>
+      </Layer>
+    </Layers>
+  </Frame>
+
+</Ui>
