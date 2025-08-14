@@ -1,0 +1,18 @@
+## Interface: 33500
+## Title: BigDebuffs
+## Notes: Tracks auras on unitframe portraits
+## Version: v6.4
+## Author: Jordon (WoTLK backport by Konjunktur)
+## DefaultState: Enabled
+## SavedVariables: BigDebuffsDB
+## OptionalDeps: LibStub, CallbackHandler-1.0, Ace3, Adapt, OmniCC, Masque
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+locale\locale.xml
+BigDebuffs.xml
+BigDebuffs_Wrath.lua
+BigDebuffs.lua
+Options.lua
