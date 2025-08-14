@@ -539,4 +539,6 @@ eventhandler:SetScript("OnEvent", function(_, event, ...)
   end
 end)
 
+_G["HealPredict"] = healpredict
+
 _G[ADDON_NAME] = healpredict

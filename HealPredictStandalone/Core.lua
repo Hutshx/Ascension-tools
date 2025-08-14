@@ -131,7 +131,15 @@ local function OnEvent(self, event, ...)
             hasEnteredWorld = true
             -- Delayed unit frame detection
             if HPS.UnitFrames.DetectFrames then
-                C_Timer.After(2, function() HPS.UnitFrames:DetectFrames() end)
+                local delayFrame = CreateFrame("Frame")
+                local elapsed = 0
+                delayFrame:SetScript("OnUpdate", function(self, delta)
+                    elapsed = elapsed + delta
+                    if elapsed >= 2 then
+                        self:SetScript("OnUpdate", nil)
+                        HPS.UnitFrames:DetectFrames()
+                    end
+                end)
             end
         end
     elseif event == "PLAYER_REGEN_DISABLED" then
@@ -154,7 +162,7 @@ eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 SLASH_HEALPREDICT1 = "/healpredict"
 SLASH_HEALPREDICT2 = "/hps"
 SlashCmdList["HEALPREDICT"] = function(msg)
-    local cmd = string.lower(string.trim(msg or ""))
+    local cmd = string.lower((string.gsub(msg or "", "^%s*(.-)%s*$", "%1")))
     
     if cmd == "config" or cmd == "options" then
         if HPS.Config.ShowConfig then

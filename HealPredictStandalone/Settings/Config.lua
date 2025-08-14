@@ -180,11 +180,31 @@ local function CreateConfigFrame()
     end
     
     -- Update status every 2 seconds when frame is visible
-    local statusTimer = C_Timer.NewTicker(2, UpdateStatus)
-    configFrame:SetScript("OnHide", function() statusTimer:Cancel() end)
+    local statusTimer = nil
+    local function StartStatusTimer()
+        if statusTimer then return end
+        statusTimer = CreateFrame("Frame")
+        local elapsed = 0
+        statusTimer:SetScript("OnUpdate", function(self, delta)
+            elapsed = elapsed + delta
+            if elapsed >= 2 then
+                elapsed = 0
+                UpdateStatus()
+            end
+        end)
+    end
+    
+    local function StopStatusTimer()
+        if statusTimer then
+            statusTimer:SetScript("OnUpdate", nil)
+            statusTimer = nil
+        end
+    end
+    
+    configFrame:SetScript("OnHide", StopStatusTimer)
     configFrame:SetScript("OnShow", function() 
         UpdateStatus()
-        statusTimer = C_Timer.NewTicker(2, UpdateStatus)
+        StartStatusTimer()
     end)
     
     return configFrame
