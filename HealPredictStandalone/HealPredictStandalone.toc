@@ -1,0 +1,20 @@
+## Interface: 30300
+## Title: HealPredict Standalone
+## Notes: Standalone heal prediction addon for Ascension WoW based on ElvUI architecture
+## Author: ElvUI Team, Adapted for Ascension
+## Version: 1.0.0
+## SavedVariables: HealPredictStandaloneDB
+## SavedVariablesPerCharacter: HealPredictStandaloneCharDB
+
+# Core Libraries
+Libraries\HealPredict\HealPredict.lua
+Libraries\oUF\ouf.lua
+Libraries\oUF_Plugins\oUF_HealComm.lua
+
+# Core System
+Core.lua
+Settings\Config.lua
+
+# Unit Frame System
+Modules\UnitFrames\Core.lua
+Modules\UnitFrames\Elements\HealComm.lua
