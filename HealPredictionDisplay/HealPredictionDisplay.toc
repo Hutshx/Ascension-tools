@@ -1,0 +1,21 @@
+## Interface: 30300
+## Title: Heal Prediction Display
+## Notes: Affiche les prédictions de heal sur les barres de vie des unitframes pour WoW Ascension - Version autonome
+## Author: Hutshx
+## Version: 1.0
+## RequiredDeps: 
+## OptionalDeps:
+## SavedVariables: HealPredictionDisplayDB
+
+Libs\LibStub.lua
+Libs\CallbackHandler.lua
+Libs\AceAddon.lua
+Libs\AceEvent.lua
+Libs\AceTimer.lua
+Libs\AceDB.lua
+Core\HealPredict.lua
+Core\LibHealComm.lua
+Core\Init.lua
+Core\HealPrediction.lua
+Core\UnitFrameDisplay.lua
+Config\Config.lua
